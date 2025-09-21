@@ -1,11 +1,5 @@
--- init-db.sql
--- Этот скрипт создаёт базу данных my_project_db (если она не существует), таблицы departments и employees,
--- и вставляет тестовые данные. Выполняется в одной команде psql -f init-db.sql.
-
--- Подключение к системной базе postgres для создания базы данных
 \connect postgres;
 
--- Проверка и создание базы данных my_project_db
 DO $$
 BEGIN
     IF NOT EXISTS (SELECT FROM pg_database WHERE datname = 'my_project_db') THEN
@@ -13,10 +7,8 @@ BEGIN
     END IF;
 END $$;
 
--- Подключение к базе my_project_db
 \connect my_project_db;
 
--- Создание таблицы departments
 CREATE TABLE IF NOT EXISTS departments (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
