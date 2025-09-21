@@ -1,0 +1,23 @@
+1 Склонировать репозиторий 
+
+2 Установите зависимости
+2.1 В корне проекта
+2.2 В папке /server
+2.3 В папке /client 
+
+4 Создайте файл /server/.env (если отсутсвует)
+DB_HOST=localhost
+DB_PORT=5432            # Укажите ваш порт
+DB_NAME=my_project_db   # Укажите правильное имя
+DB_USER=postgres        # Замените на ваш Логин 
+DB_PASSWORD=ваш_пароль  # Замените на ваш пароль PostgreSQL
+
+5 Создайте базу данных 
+$env:PGPASSWORD = "Ваш пароль"
+& "C:\Program Files\PostgreSQL\16\bin\createdb.exe" -U postgres my_project_db
+& "C:\Program Files\PostgreSQL\16\bin\psql.exe" -U postgres -d my_project_db -f init-db.sql
+(Укажите правильный свой путь если он отличается и если меняли названия тоже подкоректировать)
+(Если всё равно не получается создайте вручную базу данных и вызовите в неё команды из скрипта )
+
+6 Вернитесь в корень проекта и запустите его
+npm start

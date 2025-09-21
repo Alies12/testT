@@ -1,0 +1,25 @@
+{
+  "name": "testt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix server\" \"npm run start --prefix client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alies12/testT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Alies12/testT/issues"
+  },
+  "homepage": "https://github.com/Alies12/testT#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
